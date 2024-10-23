@@ -2,7 +2,6 @@
     emailjs.init("aJyTCmLApGXlxY3NO");
 })();
 
-
 function handleRegister(event) {
     event.preventDefault();
 
@@ -10,7 +9,6 @@ function handleRegister(event) {
     const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
 
- 
     if (!email) {
         alert('Por favor, ingresa una dirección de correo electrónico válida.');
         return;
@@ -42,7 +40,6 @@ function handleRegister(event) {
         `
     };
 
-
     emailjs.send('service_ki14uwk', 'template_q72c6on', templateParams)
         .then((response) => {
             console.log('Correo enviado exitosamente!', response.status, response.text);
@@ -55,7 +52,6 @@ function handleRegister(event) {
         });
 }
 
-
 function handleLogin(event) {
     event.preventDefault();
     const email = document.getElementById('login-email').value;
@@ -65,10 +61,15 @@ function handleLogin(event) {
     window.location.href = "panel.html";
 }
 
-
 function toggleForms() {
     const formContainer = document.getElementById('form-container');
     const switchContainer = document.querySelector('.switch-container');
+
+    // Aplicamos la animación
+    formContainer.style.opacity = '0'; 
+    formContainer.style.transform = 'translateX(100px)';
+    switchContainer.style.opacity = '0';
+    switchContainer.style.transform = 'translateX(-100px)';
 
     setTimeout(() => {
         if (formContainer.innerHTML.includes("Iniciar Sesión")) {
@@ -124,7 +125,13 @@ function toggleForms() {
                 <button class="switch-btn" onclick="toggleForms()">Crear Cuenta</button>
             `;
         }
-    }, 250);
+
+        // Restauramos la visibilidad después de la animación
+        formContainer.style.opacity = '1';
+        formContainer.style.transform = 'translateX(0)';
+        switchContainer.style.opacity = '1';
+        switchContainer.style.transform = 'translateX(0)';
+    }, 500);
 }
 
 
