@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #00AF00;
+    --secondary-color: #8f94fb;
+    --accent-color: #FFD700;
+    --background-gradient: linear-gradient(135deg, #00AF00, #8f94fb);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    margin-left: 40px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.username {
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--background-gradient);
+    color: white;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: rgba(0, 175, 0, 0.8);
+}
+
+.sidebar .active {
+    background-color: var(--secondary-color);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-bar input {
+    padding: 10px;
+    width: 200px;
+}
+
+.top-menu {
+    display: flex;
+}
+
+.logout-button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: rgba(0, 175, 0, 0.8);
+}
+
+.content {
+    display: none;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+    }
+
+    .username {
+        font-size: 16px;
+    }
+
+    .top-bar input {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
