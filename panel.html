@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="img/perfil.jpg" alt="Perfil" class="profile-image">
+                <p class="username" id="username-display">Nombre Completo</p>
+            </div>
+            <ul>
+                <li><i class="fas fa-home"></i> <span id="inicio-btn">Inicio</span></li>
+                <li><i class="fas fa-receipt"></i> <span id="ingresos-btn">Ingresos</span></li>
+                <li><i class="fas fa-file-invoice"></i> <span id="facturas-btn">Facturas de venta</span></li>
+                <li><i class="fas fa-money-check-alt"></i> <span id="gastos-btn">Gastos</span></li>
+                <li><i class="fas fa-address-book"></i> <span id="contactos-btn">Contactos</span></li>
+                <li><i class="fas fa-boxes"></i> <span id="inventario-btn">Inventario</span></li>
+                <li><i class="fas fa-chart-line"></i> <span id="reportes-btn">Reportes</span></li>
+                <li id="configuracion-btn"><i class="fas fa-cog"></i> Configuración</li>
+            </ul>
+        </div>
+
+        <div class="main-content" id="main-content">
+            <div class="top-bar">
+                <input type="text" placeholder="Buscar...">
+                <div class="top-menu">
+                    <button id="logout-btn" class="logout-button"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+                </div>
+            </div>
+
+            <div class="content" id="contenido-inicio">
+                <h1>Factura de venta 1</h1>
+                <div class="action-buttons">
+                    <button><i class="fas fa-print"></i> Imprimir</button>
+                    <button><i class="fas fa-file-pdf"></i> Descargar PDF</button>
+                    <button><i class="fas fa-envelope"></i> Enviar por correo</button>
+                    <button><i class="fas fa-ellipsis-h"></i> Más acciones</button>
+                </div>
+
+                <div class="invoice-info">
+                    <div class="details">
+                        <p>Valor total: <strong>$1,642,200</strong></p>
+                        <p>Retenido: <strong>$0</strong></p>
+                        <p>Devuelto: <strong>$0</strong></p>
+                        <p>Cobrado: <strong>$0</strong></p>
+                        <p>Por cobrar: <strong>$1,642,200</strong></p>
+                    </div>
+                    <div class="progress">
+                        <p>Estado DIAN: <strong>Emitida</strong></p>
+                        <p>Envío de factura al cliente: <strong>Enviado</strong></p>
+                        <p>Aceptación del cliente: <strong>Aceptada</strong></p>
+                    </div>
+                </div>
+
+                <div class="client-info">
+                    <p><strong>Cliente:</strong> Adriana Restrepo López</p>
+                    <p><strong>NIT:</strong> 1123456789-2</p>
+                    <p><strong>Teléfono:</strong> 3050005678</p>
+                    <p><strong>Dirección:</strong> Calle 24 Sur # 99-99 Apto 204</p>
+                </div>
+            </div>
+
+            <div class="content" id="contenido-ingresos" style="display:none;">
+                <h1>Ingresos</h1>
+                <p>Detalles sobre los ingresos aquí.</p>
+            </div>
+
+            <div class="content" id="contenido-facturas" style="display:none;">
+                <h1>Facturas de Venta</h1>
+                <p>Detalles sobre las facturas aquí.</p>
+            </div>
+
+            <div class="content" id="contenido-gastos" style="display:none;">
+                <h1>Gastos</h1>
+                <p>Detalles sobre los gastos aquí.</p>
+            </div>
+
+            <div class="content" id="contenido-contactos" style="display:none;">
+                <h1>Contactos</h1>
+                <p>Detalles sobre los contactos aquí.</p>
+            </div>
+
+            <div class="content" id="contenido-inventario" style="display:none;">
+                <h1>Inventario</h1>
+                <p>Detalles sobre el inventario aquí.</p>
+            </div>
+
+            <div class="content" id="contenido-reportes" style="display:none;">
+                <h1>Reportes</h1>
+                <p>Detalles sobre los reportes aquí.</p>
+            </div>
+
+            <div class="configuracion" id="configuracion" style="display:none;">
+                <h2>Configuración</h2>
+                <label for="theme-select">Seleccionar tema:</label>
+                <select id="theme-select">
+                    <option value="light">Claro</option>
+                    <option value="dark">Oscuro</option>
+                </select>
+
+                <label for="notifications">Notificaciones:</label>
+                <select id="notifications">
+                    <option value="enabled">Habilitadas</option>
+                    <option value="disabled">Deshabilitadas</option>
+                </select>
+
+                <label for="language-select">Seleccionar idioma:</label>
+                <select id="language-select">
+                    <option value="es">Español</option>
+                    <option value="en">Inglés</option>
+                    <option value="pt">Portugués</option>
+                </select>
+
+                <label for="user-management">Gestión de usuarios:</label>
+                <select id="user-management">
+                    <option value="admin">Administrador</option>
+                    <option value="user">Usuario</option>
+                    <option value="readonly">Solo lectura</option>
+                </select>
+
+                <button id="guardar-config" class="btn-guardar">Guardar configuración</button>
+                <button id="volver-inicio" class="btn-volver">Volver al Inicio</button>
+            </div>
+
+            <div class="footer">
+                <p>&copy; 2024 CONTASOFT. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/panel.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
